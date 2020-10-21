@@ -1,6 +1,7 @@
 package org.springcourse;
 
 public class MusicPlayer {
+    
     private Music music;
     private String name;
     private int volume;
