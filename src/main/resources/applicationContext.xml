@@ -10,18 +10,19 @@
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
     <bean id="musicBean"
-          class="org.springcourse.RockMusic">  <!--ClassicalMusic или RockMusic
-                                                        то есть можем менять класс не трогая код-->
-    </bean>
-
-    <bean id="musicPlayer"
-          class="org.springcourse.MusicPlayer"
-          scope="prototype">
-        <property name="music" ref="musicBean"/>
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-
+          class="org.springcourse.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+          factory-method="getClassicalMusic">
 
     </bean>
+
+    <!--    <bean id="musicPlayer"-->
+    <!--          class="org.springcourse.MusicPlayer"-->
+    <!--          scope="prototype">-->
+    <!--        <property name="music" ref="musicBean"/>-->
+    <!--        <property name="name" value="${musicPlayer.name}"/>-->
+    <!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+    <!--    </bean>-->
 
 </beans>
