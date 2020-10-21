@@ -2,10 +2,31 @@ package org.springcourse;
 
 public class MusicPlayer {
     private Music music;
+    private String name;
+    private int volume;
 
-    //IoC (инверсия управления)
+    public MusicPlayer() {
+    }
+
+    //IoC (инверсия управления)1
     public MusicPlayer(Music music) {
         this.music = music;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
     }
 
     public void setMusic(Music music) {
