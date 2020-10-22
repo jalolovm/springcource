@@ -1,10 +1,12 @@
 package org.springcourse;
 
-public class ClassicalMusic implements Music {
-    private ClassicalMusic() {     //ВНИМАНИЕ СЮДА
-    }
+import org.springframework.stereotype.Component;
 
-    public static ClassicalMusic getClassicalMusic(){ // И СЮДА
+@Component ("someClassicalMusic")
+public class ClassicalMusic implements Music {
+
+
+    public static ClassicalMusic getClassicalMusic(){
        return new ClassicalMusic();
     }
 
@@ -13,7 +15,7 @@ public class ClassicalMusic implements Music {
     }
 
     public void doMyDestroy(){
-        System.out.printf("Doing my destruction");
+        System.out.println("Doing my destruction");
     }
 
     @Override
